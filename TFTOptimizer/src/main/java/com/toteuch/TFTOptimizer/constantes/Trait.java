@@ -1,0 +1,5 @@
+package com.toteuch.TFTOptimizer.constantes;
+
+public enum Trait {
+	ADEPT, ASSASSIN, BRAWLER, DAZZLER, DUELIST, EMPEROR, HUNTER, KEEPER, MAGE, MYSTIC, SHADE, SHARPSHOOTER, VANGUARD;
+}
