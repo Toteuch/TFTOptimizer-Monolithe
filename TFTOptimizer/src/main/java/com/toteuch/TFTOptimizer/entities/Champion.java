@@ -1,33 +1,17 @@
 package com.toteuch.TFTOptimizer.entities;
 
-import java.util.ArrayList;
+import java.awt.Image;
 import java.util.List;
 
-import com.toteuch.TFTOptimizer.constantes.FinalItem;
-import com.toteuch.TFTOptimizer.constantes.Origin;
-import com.toteuch.TFTOptimizer.constantes.Trait;
+import com.toteuch.TFTOptimizer.constantes.Quality;
 
 public class Champion {
 	private String name;
-	private String role;
-	private Origin origin1;
-	private Origin origin2;
-	private Trait trait1;
-	private Trait trait2;
-	private List<FinalItem> finalItemList;
-	
-	@Override
-	public String toString() {
-		String ret = name + " " + role + " " + origin1 + " " + origin2 + " " + trait1 + " " + trait2;
-		for(FinalItem item : finalItemList) {
-			ret += " " + item;
-		}
-		return ret;
-	}
-	
-	public Champion() {
-		finalItemList = new ArrayList<FinalItem>();
-	}
+	private String detailUrl;
+	private Quality quality;
+	private Image image;
+	private String urlImage;
+	private List<ItemState> itemsStates;
 	
 	public String getName() {
 		return name;
@@ -35,46 +19,34 @@ public class Champion {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRole() {
-		return role;
+	public String getDetailUrl() {
+		return detailUrl;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setDetailUrl(String detailUrl) {
+		this.detailUrl = detailUrl;
 	}
-	public Trait getTrait1() {
-		return trait1;
+	public Quality getQuality() {
+		return quality;
 	}
-	public void setTrait1(Trait trait1) {
-		this.trait1 = trait1;
+	public void setQuality(Quality quality) {
+		this.quality = quality;
 	}
-	public Trait getTrait2() {
-		return trait2;
+	public Image getImage() {
+		return image;
 	}
-	public void setTrait2(Trait trait2) {
-		this.trait2 = trait2;
+	public void setImage(Image image) {
+		this.image = image;
 	}
-
-	public Origin getOrigin1() {
-		return origin1;
+	public List<ItemState> getItemsStates() {
+		return itemsStates;
 	}
-
-	public void setOrigin1(Origin origin1) {
-		this.origin1 = origin1;
+	public void setItemsStates(List<ItemState> itemsStates) {
+		this.itemsStates = itemsStates;
 	}
-
-	public Origin getOrigin2() {
-		return origin2;
+	public String getUrlImage() {
+		return urlImage;
 	}
-
-	public void setOrigin2(Origin origin2) {
-		this.origin2 = origin2;
-	}
-
-	public List<FinalItem> getFinalItemList() {
-		return finalItemList;
-	}
-
-	public void setFinalItemList(List<FinalItem> finalItemList) {
-		this.finalItemList = finalItemList;
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
 	}
 }
