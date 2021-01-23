@@ -1,11 +1,13 @@
 package com.toteuch.TFTOptimizer.services;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,8 +20,20 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 	
 	private static final int CENT = 100;
 	
+	final Properties properties = new Properties();
+	
+	public TFTOptimizerService() {
+		try {
+			properties.load(ClassLoader.getSystemResourceAsStream("tftoptimizer.properties"));
+		} catch (IOException e) {
+			System.err.println("Error reading properties file");
+			e.printStackTrace();
+		}
+	}
+	
+	
 	@Override
-	public List<Item> getLowItems() {
+ 	public List<Item> getLowItems() {
 		List<Item> lowItems = new ArrayList<Item>();
 		Map<String, Item> items = HtmlService.getItems();
 		for(Map.Entry<String, Item> entry : items.entrySet()) {
@@ -121,5 +135,10 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 			map.put(item, nbr);
 		}
 		return map;
+	}
+
+	@Override
+	public String getProjectVersion() {
+		return properties.getProperty("tftoptimizer.version");
 	}
 }

@@ -14,4 +14,6 @@ public interface ITFTOptimizerService {
 	 * @return
 	 */
 	public List<ChampAnalysis> getBestScore(Map<Item, Integer> inputMatList);
+	
+	public String getProjectVersion();
 }

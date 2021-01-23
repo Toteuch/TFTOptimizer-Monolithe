@@ -1,10 +1,13 @@
 Version 0.3.0 TODO
 * Titre (avec version) + icone de la MainFrame
-* Modification affichage nom des champions (retour à la ligne remplacé par si trop long, raccourci)
+* Ajout d'un bouton de reset
 * Création d'un panneau avec les détails des champions sélectionnés
 * 	Ajouter/Supprimer un champion de la sélection
 *	Creation du pannel des champions selectionnés
 *	Creation d'un panel de detail de champion
+* Correction de bugs
+*	Modification affichage nom des champions (retour à la ligne remplacé par si trop long, raccourci)
+*	Arrondir le score sur l'ihm
 ******************************************************************
 Version 0.2.2
 * Hotfix chargement des librairies

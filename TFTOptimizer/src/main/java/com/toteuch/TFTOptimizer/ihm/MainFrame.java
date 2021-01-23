@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
@@ -62,6 +63,11 @@ public class MainFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		
+		ImageIcon img = new ImageIcon(ClassLoader.getSystemResource("icon/mainFrameIcon.jpg"));
+		frame.setIconImage(img.getImage());
+		String version = service.getProjectVersion();
+		frame.setTitle("TFTOptimizer v" + version + " made by Toteuch");
 		frame.setSize(MAIN_FRAME_WIDTH, MAIN_FRAME_HEIGHT);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
