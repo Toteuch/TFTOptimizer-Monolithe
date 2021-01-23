@@ -7,7 +7,7 @@ Version 0.3.0 TODO
 *	Creation du pannel des champions selectionnés
 *	Creation d'un panel de detail de champion
 * Correction de bugs
-*	Modification affichage nom des champions (retour à la ligne remplacé par si trop long, raccourci)
+*	Modification affichage nom des champions (retour à la ligne remplacé par si trop long, raccourci) : DONE
 *	Arrondir le score sur l'ihm : DONE
 * 	Les items utilisés pour les crafts n'étaient pas supprimés de la liste des items disponibles : DONE
 ******************************************************************
