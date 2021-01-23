@@ -6,8 +6,6 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.toteuch.TFTOptimizer.entities.Champion;
 import com.toteuch.TFTOptimizer.ihm.utils.ImageUtils;
 
@@ -25,9 +23,10 @@ public class ChampLabel extends JLabel {
 		String name = champ.getName();
 		this.setName(PREFIX_CHAMP_LABEL+name);
 		String text = name;
-		if (StringUtils.contains(text, " ")) {
-			text = "<html><body>" + text.replace(" ", "<br/>") + "</body></html>";
+		if(text.length() > 9) {
+			text = text.substring(0,9);
 		}
+		
 		this.setText(text);
 		Font font = new Font("Serial", Font.BOLD, CHAMP_ICON_TEXT_FONT_SIZE);
 		this.setFont(font);
