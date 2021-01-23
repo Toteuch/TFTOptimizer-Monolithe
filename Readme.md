@@ -1,3 +1,6 @@
+Version 0.2.1
+* Hotfix configuration classe main
+******************************************************************
 Version 0.2.0
 * Récupérer les éléments suivant directement depuis Lolchess :
 	* Liste des champions
