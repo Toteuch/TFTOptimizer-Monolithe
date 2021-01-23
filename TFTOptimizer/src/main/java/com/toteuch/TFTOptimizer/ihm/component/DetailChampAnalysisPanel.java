@@ -2,6 +2,7 @@ package com.toteuch.TFTOptimizer.ihm.component;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.text.DecimalFormat;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,7 +23,8 @@ public class DetailChampAnalysisPanel extends JPanel {
 		this.setLayout(new GridBagLayout());
 		
 		// Score du champion
-		JLabel scoreLabel = new JLabel(String.valueOf(champAnalysis.getScore()));
+		DecimalFormat df = new DecimalFormat("#");
+		JLabel scoreLabel = new JLabel(df.format(champAnalysis.getScore()));
 		GridBagConstraints cScoreLabel = new GridBagConstraints();
 		cScoreLabel.gridx = 0;
 		cScoreLabel.gridy = 0;
