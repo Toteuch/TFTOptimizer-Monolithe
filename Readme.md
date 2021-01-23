@@ -1,5 +1,5 @@
 Version 0.3.0 TODO
-* Titre (avec version) + icone de la MainFrame
+* Titre (avec version) + icone de la MainFrame : DONE
 * Ajout d'un bouton de reset
 * Création d'un panneau avec les détails des champions sélectionnés
 * 	Ajouter/Supprimer un champion de la sélection
@@ -8,6 +8,8 @@ Version 0.3.0 TODO
 * Correction de bugs
 *	Modification affichage nom des champions (retour à la ligne remplacé par si trop long, raccourci)
 *	Arrondir le score sur l'ihm
+*	Bug sur item GS ?
+* 	Les items utilisés pour les crafts n'étaient pas supprimés de la liste des items disponibles : DONE
 ******************************************************************
 Version 0.2.2
 * Hotfix chargement des librairies

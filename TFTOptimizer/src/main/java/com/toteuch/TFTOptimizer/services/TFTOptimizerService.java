@@ -129,7 +129,7 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 			System.err.println("Can't find any " + item + " in the actual map of Item");
 		}
 		if (nbr == 1) {
-			map.remove(item);
+			map.remove(key);
 		} else {
 			nbr--;
 			map.put(item, nbr);
