@@ -1,3 +1,6 @@
+Version 0.2.2
+* Hotfix chargement des librairies
+******************************************************************
 Version 0.2.1
 * Hotfix configuration classe main
 ******************************************************************
