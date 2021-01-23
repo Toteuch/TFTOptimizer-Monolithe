@@ -3,6 +3,8 @@ package com.toteuch.TFTOptimizer.ihm;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.HashMap;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
@@ -73,6 +76,15 @@ public class MainFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(DEFAULT_BG_COLOR);
 		frame.setLayout(new WrapLayout(WrapLayout.CENTER));
+		
+		JButton resetButton = new JButton("Reset");
+		resetButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				reset();
+			}
+		});
+		frame.getContentPane().add(resetButton);
 
 		Runnable lowItemPanelThread = new Runnable() {
 			public void run() {
@@ -148,6 +160,23 @@ public class MainFrame {
 			}
 		}
 		return rawMats;
+	}
+
+	private void reset() {
+		LowItemPanel lowItemPanel = null;
+		for (Component c : frame.getContentPane().getComponents()) {
+			if (c instanceof LowItemPanel) {
+				lowItemPanel = (LowItemPanel) c;
+				break;
+			} 
+		}
+		for(Component c : lowItemPanel.getComponents()) {
+			if(c instanceof JLabel) {
+				JLabel itemLabel = (JLabel) c;
+				itemLabel.setText("0");
+			}
+		}
+		optimize();
 	}
 
 }
