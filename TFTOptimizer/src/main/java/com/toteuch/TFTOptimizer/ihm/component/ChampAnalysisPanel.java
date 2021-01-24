@@ -1,5 +1,6 @@
 package com.toteuch.TFTOptimizer.ihm.component;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -7,6 +8,7 @@ import javax.swing.JPanel;
 
 import com.toteuch.TFTOptimizer.entities.ChampAnalysis;
 import com.toteuch.TFTOptimizer.entities.Champion;
+import com.toteuch.TFTOptimizer.ihm.utils.ColorUtils;
 
 public class ChampAnalysisPanel extends JPanel {
 	
@@ -30,5 +32,9 @@ public class ChampAnalysisPanel extends JPanel {
 		cDetails.gridx = 0;
 		cDetails.gridy = 1;
 		this.add(detailChampAnalysisPanel, cDetails);
+		
+		Color champColor = champ.getQuality().getColor();
+		this.setBackground(champColor);
+		this.setForeground(ColorUtils.getReadable(champColor));
 	}
 }

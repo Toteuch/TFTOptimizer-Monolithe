@@ -1,7 +1,7 @@
 Version 0.3.0 TODO
 * Titre (avec version) + icone de la MainFrame : DONE
 * Ajout d'un bouton de reset DONE
-* Ajout un cadre de la couleur des costs aux champions
+* Ajout un cadre de la couleur des costs aux champions DONE
 * Création d'un panneau avec les détails des champions sélectionnés
 * 	Ajouter/Supprimer un champion de la sélection
 *	Creation du pannel des champions selectionnés

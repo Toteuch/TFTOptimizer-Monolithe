@@ -1,5 +1,6 @@
 package com.toteuch.TFTOptimizer.ihm.component;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 
@@ -7,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import com.toteuch.TFTOptimizer.entities.Champion;
+import com.toteuch.TFTOptimizer.ihm.utils.ColorUtils;
 import com.toteuch.TFTOptimizer.ihm.utils.ImageUtils;
 
 public class ChampLabel extends JLabel {
@@ -37,5 +39,9 @@ public class ChampLabel extends JLabel {
 		this.setVerticalTextPosition(JLabel.TOP);
 		this.setHorizontalTextPosition(JLabel.CENTER);
 		this.setIconTextGap(0);
+		
+		Color champColor = champ.getQuality().getColor();
+		this.setBackground(champColor);
+		this.setForeground(ColorUtils.getReadable(champColor));
 	}
 }
