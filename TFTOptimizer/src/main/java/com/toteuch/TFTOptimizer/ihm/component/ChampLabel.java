@@ -2,9 +2,7 @@ package com.toteuch.TFTOptimizer.ihm.component;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import com.toteuch.TFTOptimizer.entities.Champion;
@@ -33,8 +31,7 @@ public class ChampLabel extends JLabel {
 		Font font = new Font("Serial", Font.BOLD, CHAMP_ICON_TEXT_FONT_SIZE);
 		this.setFont(font);
 		
-		Image scaledImage = ImageUtils.getScaledImage(champ.getImage(), CHAMP_ICON_WIDTH, CHAMP_ICON_HEIGHT);
-		this.setIcon(new ImageIcon(scaledImage));
+		this.setIcon(ImageUtils.getScaledImageIcon(champ.getImage(), CHAMP_ICON_WIDTH, CHAMP_ICON_HEIGHT));
 		
 		this.setVerticalTextPosition(JLabel.TOP);
 		this.setHorizontalTextPosition(JLabel.CENTER);

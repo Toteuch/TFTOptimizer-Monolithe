@@ -22,6 +22,8 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 	
 	final Properties properties = new Properties();
 	
+	private static final Map<String, Champion> mapChamps = new HashMap<String, Champion>();
+	
 	public TFTOptimizerService() {
 		try {
 			properties.load(ClassLoader.getSystemResourceAsStream("tftoptimizer.properties"));
@@ -140,5 +142,16 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 	@Override
 	public String getProjectVersion() {
 		return properties.getProperty("tftoptimizer.version");
+	}
+
+
+	@Override
+	public Map<String, Champion> getChamps() {
+		if(mapChamps.isEmpty()) {
+			for(Champion c : HtmlService.getChampions()) {
+				mapChamps.put(c.getName(), c);
+			}
+		}
+		return mapChamps;
 	}
 }

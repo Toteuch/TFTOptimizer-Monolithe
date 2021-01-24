@@ -3,7 +3,6 @@ package com.toteuch.TFTOptimizer.ihm.component;
 import java.awt.Color;
 import java.util.List;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -28,7 +27,7 @@ public class LowItemPanel extends JPanel {
 		// Création des icones items
 		for (Item item : lowItems) {
 			JLabel label = new JLabel("0", // Nombre possédé
-					new ImageIcon(ImageUtils.getScaledImage(item.getImage(), ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT)),
+					ImageUtils.getScaledImageIcon(item.getImage(), ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT),
 					JLabel.CENTER);
 			label.setName(PREFIX_ITEM_LABEL + item.getName());
 			label.setVerticalTextPosition(JLabel.BOTTOM);

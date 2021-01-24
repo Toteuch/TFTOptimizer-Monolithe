@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.toteuch.TFTOptimizer.entities.ChampAnalysis;
+import com.toteuch.TFTOptimizer.entities.Champion;
 import com.toteuch.TFTOptimizer.entities.Item;
 
 public interface ITFTOptimizerService {
@@ -16,4 +17,6 @@ public interface ITFTOptimizerService {
 	public List<ChampAnalysis> getBestScore(Map<Item, Integer> inputMatList);
 	
 	public String getProjectVersion();
+	
+	public Map<String, Champion> getChamps();
 }

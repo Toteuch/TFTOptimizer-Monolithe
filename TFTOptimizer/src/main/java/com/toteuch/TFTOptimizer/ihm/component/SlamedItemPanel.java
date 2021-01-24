@@ -1,10 +1,7 @@
 package com.toteuch.TFTOptimizer.ihm.component;
 
 import java.awt.Color;
-import java.awt.Image;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -35,22 +32,14 @@ public class SlamedItemPanel extends JPanel {
 		this.setForeground(ColorUtils.getReadable(champColor));
 		for(Item item : champAnalysis.getSlamedItems()) {
 			JLabel itemLabel = new JLabel();
-			Image itemImg = ImageUtils.getScaledImage(item.getImage(), ITEM_ICON_WIDTH_MINI, ITEM_ICON_HEIGHT_MINI);
-			itemLabel.setIcon(new ImageIcon(itemImg));
+			itemLabel.setIcon(ImageUtils.getScaledImageIcon(item.getImage(), ITEM_ICON_WIDTH_MINI, ITEM_ICON_HEIGHT_MINI));
 			itemLabel.setBackground(champColor);
 			itemLabel.setForeground(ColorUtils.getReadable(champColor));
 			this.add(itemLabel);
 		}
 		if(champAnalysis.getSlamedItems() == null || champAnalysis.getSlamedItems().isEmpty()) {
 			JLabel itemLabel = new JLabel();
-			Image itemImg = null;
-			try {
-				itemImg = ImageUtils.getScaledImage(ImageIO.read( ClassLoader.getSystemResource(FP_PLACEHOLDER_ITEM)), ITEM_ICON_WIDTH_MINI, ITEM_ICON_HEIGHT_MINI);
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.err.println("Can't load Item image placeholder" + FP_PLACEHOLDER_ITEM);
-			}
-			itemLabel.setIcon(new ImageIcon(itemImg));
+			itemLabel.setIcon(ImageUtils.getScaledImageIconFromClassLoader(FP_PLACEHOLDER_ITEM, ITEM_ICON_WIDTH_MINI, ITEM_ICON_HEIGHT_MINI));
 			itemLabel.setBackground(champColor);
 			itemLabel.setForeground(ColorUtils.getReadable(champColor));
 			this.add(itemLabel);
