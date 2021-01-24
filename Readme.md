@@ -1,4 +1,4 @@
-Version 0.3.0 TODO
+Version 0.3.0
 * Titre (avec version) + icone de la MainFrame : DONE
 * Ajout d'un bouton de reset DONE
 * Ajout un cadre de la couleur des costs aux champions DONE
