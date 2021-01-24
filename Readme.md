@@ -1,3 +1,5 @@
+Version 0.4.0 TODO
+******************************************************************
 Version 0.3.0
 * Titre (avec version) + icone de la MainFrame : DONE
 * Ajout d'un bouton de reset DONE
