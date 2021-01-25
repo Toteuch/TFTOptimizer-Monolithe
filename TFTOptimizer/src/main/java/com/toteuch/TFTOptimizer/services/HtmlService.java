@@ -16,6 +16,8 @@ import java.util.Set;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -31,6 +33,8 @@ public class HtmlService {
 	private static final String URL_LOLCHESS_STAT = "https://lolchess.gg/statistics/items";
 	private static Map<String, Item> items;
 	private static List<Champion> champions;
+	
+	private static Logger LOG = LogManager.getLogger(HtmlService.class);
 
 	private static void parseLolChessStat() { 
 		String output = getUrlContents(URL_LOLCHESS_STAT);
@@ -163,7 +167,7 @@ public class HtmlService {
 			attempt++;
 		}
 		if(image == null) {
-			System.err.println("IMAGE NOT FOUND : " + sUrl);
+			LOG.error("IMAGE NOT FOUND : " + sUrl);
 		}
 		return image;
 	}

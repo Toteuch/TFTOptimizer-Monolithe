@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.toteuch.TFTOptimizer.entities.ChampAnalysis;
 import com.toteuch.TFTOptimizer.entities.Champion;
@@ -24,11 +26,14 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 	
 	private static final Map<String, Champion> mapChamps = new HashMap<String, Champion>();
 	
+	private static Logger LOG = LogManager.getLogger(TFTOptimizerService.class);
+	
 	public TFTOptimizerService() {
+		LOG.debug("Instanciation du service TFTOptimizerService");
 		try {
 			properties.load(ClassLoader.getSystemResourceAsStream("tftoptimizer.properties"));
 		} catch (IOException e) {
-			System.err.println("Error reading properties file");
+			LOG.error("Error reading properties file");
 			e.printStackTrace();
 		}
 	}
@@ -128,7 +133,7 @@ public class TFTOptimizerService implements ITFTOptimizerService {
 		}		
 		Integer nbr = map.get(key);
 		if (nbr == null || nbr == 0) {
-			System.err.println("Can't find any " + item + " in the actual map of Item");
+			LOG.error("Can't find any " + item + " in the actual map of Item");
 		}
 		if (nbr == 1) {
 			map.remove(key);

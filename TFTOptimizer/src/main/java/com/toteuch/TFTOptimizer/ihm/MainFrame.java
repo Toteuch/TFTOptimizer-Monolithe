@@ -20,6 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.toteuch.TFTOptimizer.entities.ChampAnalysis;
 import com.toteuch.TFTOptimizer.entities.Champion;
@@ -47,6 +49,8 @@ public class MainFrame extends JFrame {
 
 	private ITFTOptimizerService service;
 	private SelectedChampDialog selectedChampPanel;
+	
+	private static Logger LOG = LogManager.getLogger(TFTOptimizerService.class);
 
 	/**
 	 * Launch the application.
@@ -68,6 +72,7 @@ public class MainFrame extends JFrame {
 	 * Create the application.
 	 */
 	public MainFrame() {
+		LOG.debug("MainFrame init...");
 		service = new TFTOptimizerService();
 		initialize();
 	}
