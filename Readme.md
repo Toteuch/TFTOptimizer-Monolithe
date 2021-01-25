@@ -1,4 +1,7 @@
 Version 0.4.0 TODO
+* Bug sur le cadre des champions sélectionnés après un recalcul du score
+* Ajouter framework de logs
+* perf initial
 ******************************************************************
 Version 0.3.0
 * Titre (avec version) + icone de la MainFrame : DONE
@@ -30,5 +33,3 @@ Version 0.1.0
 * Optimisation via build csv
 
 ******************************************************************
-A réfléchir
-	Panneau de chargement à l'initialisation
