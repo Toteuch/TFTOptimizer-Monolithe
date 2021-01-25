@@ -224,7 +224,7 @@ public class MainFrame extends JFrame {
 		if (resultPanel != null) {
 			getContentPane().remove(resultPanel);
 		}
-		resultPanel = new ResultPanel(champsAnalysisList);
+		resultPanel = new ResultPanel(champsAnalysisList, selChampionMap);
 		addMouseListenerToAllChampAnalysisPanel(resultPanel);
 		getContentPane().add(resultPanel);
 		repaint();
