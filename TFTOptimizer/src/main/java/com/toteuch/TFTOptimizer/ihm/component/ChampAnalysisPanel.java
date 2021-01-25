@@ -20,7 +20,7 @@ public class ChampAnalysisPanel extends JPanel {
 	
 	public static final Border BORDER_SELECTED_CHAMP = BorderFactory.createLineBorder(Color.RED, 2);
 		
-	public ChampAnalysisPanel(ChampAnalysis champAnalysis) {
+	public ChampAnalysisPanel(ChampAnalysis champAnalysis, boolean selected) {
 		Champion champ = champAnalysis.getChamp();
 		this.setName(PREFIX_CHAMP_ANALYSIS_PANEL + champ.getName());
 		this.setLayout(new GridBagLayout());
@@ -40,5 +40,9 @@ public class ChampAnalysisPanel extends JPanel {
 		Color champColor = champ.getQuality().getColor();
 		this.setBackground(champColor);
 		this.setForeground(ColorUtils.getReadable(champColor));
+		
+		if(selected) {
+			setBorder(BORDER_SELECTED_CHAMP);
+		}
 	}
 }
